@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Base Wallet Tracker</title>
+
+<style>
+body{
+background:#0b0f19;
+color:white;
+font-family:Arial,sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+}
+
+.card{
+background:#141b2d;
+padding:30px;
+border-radius:15px;
+width:90%;
+max-width:400px;
+text-align:center;
+box-shadow:0 0 20px rgba(0,132,255,.3);
+}
+
+input{
+width:100%;
+padding:12px;
+margin:15px 0;
+border:none;
+border-radius:8px;
+}
+
+button{
+background:#0052FF;
+color:white;
+padding:12px 20px;
+border:none;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+width:100%;
+}
+
+#result{
+margin-top:20px;
+color:#6be675;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+<h1>🔵 Base Wallet Tracker</h1>
+
+<input id="wallet" placeholder="Enter Base Wallet Address">
+
+<button onclick="trackWallet()">Track Wallet</button>
+
+<div id="result"></div>
+</div>
+
+<script>
+function trackWallet(){
+const address=document.getElementById("wallet").value;
+
+if(address.length<42){
+document.getElementById("result").innerHTML="❌ Invalid wallet address";
+return;
+}
+
+document.getElementById("result").innerHTML=
+"✅ Wallet: "+address+"<br><br>🚧 Live balance and transaction history will be added next.";
+}
+</script>
+
+</body>
+</html>
